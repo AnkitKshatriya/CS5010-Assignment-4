@@ -1,1 +1,0 @@
-Since a term in the polynomial is a polynomial itself, the
