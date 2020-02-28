@@ -1,0 +1,12 @@
+no-arg constructor
+arg constructor
+addTerm
+getDegree
+getCoefficient
+equality
+toString
+multiply
+add
+derivative
+
+test overflow on evaluate

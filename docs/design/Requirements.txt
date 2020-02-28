@@ -1,0 +1,48 @@
+Points to note:
+1. each polynomial term has a coefficient and a power.
+2. Polynomial can contain multiple variables.
+3. In a term, the power is a non-negative whole number (i.e. it can be zero), and the coefficient is an integer (can be positive or negative, but not zero).
+4. Equality of polynomials as a concept is defined such that two polynomials are equal if they have the same terms.
+5. It is not mentioned in the spec, but the PolynomialImpl should be immutable.
+6. Use higher order functions.
+7. We are likely to be using a singly linked list terminated by an empty node where the coefficient is 0 and power is also 0. The terminating node is to be a special node in our case.
+8. Read the entire assignment again to see if we missed something.
+9. Degree of 0 is undefined. Throw exception when invoked on empty polynomial.
+10. List should be stored in a sorted form.
+
+
+Test cases:
+For each test case, assertions should be written for each read method in the interface. In our case, only getDegree is one such method.
+See if getCoefficient can be tested as well (it can be, and the test is easy to write as well).
+
+1. Test for equality of two polynomials.
+   Test for equality of same polynomials with the terms rearranged in the input string.
+2. Test for power of polynomial term being a negative whole number.
+   Test for power of polynomial term being a negative fractional number.
+   Test for power of polynomial term being a non-negative fractional number.
+   Test for power of polynomial term being a non-negative whole number.
+   Test for power of polynomial term being 0 and coefficient being non-zero integer.
+3. Test for coefficient of polynomial term being a positive and negative integer.
+   Test for coefficient of polynomial term being zero.
+4. Test to evaluate functionality of polynomial by plugging in a value for the variable.
+   Test by plugging in 0.
+5. Test addition of two polynomials.
+   Test addition of two polynomials where one of the polynomials is 0.
+   Test the addition of two polynomials where the result of the addition is 0, i.e. the polynomials being added are the negatives of one another.
+6. Test multi-variable polynomials (Looks like this is out of scope of the assignment, as evaluate only takes one argument).
+7. Test multiplication of two polynomials.
+   Test the multiplication of one polynomial with -1.
+8. Test derivative of the polynomial.
+9. Test the constructor which takes a String.
+   Test with invalid String as input.
+        String without spaces between terms.
+        More than one character in the input (which would mean that the term is multi-variable)
+        An internal constructor which takes a power and coefficient would then take care of validating the rest.
+10. Test the toString method of the polynomial.
+11. Test the immutability of the Polynomial.
+12. Test the constructor of the Polynomial that takes no arguments.
+13. Test the addTerm method and its exception.
+14. Test the getDegree separately.
+    Test the getDegree of polynomial created using the no-arg constructor.
+    Test the getDegree of polynomial created using the String constructor.
+15. Test the String constructor of the PolynomialImpl thoroughly.

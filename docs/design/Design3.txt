@@ -1,0 +1,41 @@
+Simple design.
+
+The requirement is to use recursive data structure, i.e. self referencing data structure. The operations themselves need not be recursive.
+The ideal thing to do would be to have a separate set of classes for the linked list ADT, and separate containers for the polynomial classes.
+
+The PolynomialImpl will be the link connecting the two sets of classes.
+
+addTerm
+    simple recursion
+        if term found with correct power, add coefficients.
+        else add term to linked list.
+    reduce to find term with the same power
+        if the term is found, add coefficient
+        else add term to linked list
+getDegree
+    reduce to find max power in all terms.
+getCoefficient
+    find term with certain power and return its coefficient.
+evaluate
+    map each term to double value by doing the math.
+add
+    for each term in the list to be added, find the term in current list with the correct power and add coefficients
+    if term is not found, return the term.
+multiply
+    for each term in the list to be multiplied, iterate over each term in the current list and return new term with corresponding power and coefficient.
+derivative
+    map each term to another term with power and coefficients equal to the derivative of the term.
+equals
+    for each term in the list to be compared, and compare with each item in the current list to see if there is a match.
+
+It looks like we need functions to find nodes in the list with a given power, power and coefficient.
+
+getTerm(int power)
+getTerm(int power, int coefficient)
+
+These functions can be used in add, multiply, addTerm, getCoefficient, equals.
+
+
+
+"(\\s*[-+]\\d*?[a-zA-Z]?(\\^\\d+)?$"
+"(\\s*[-+]\\d*?[a-zA-Z]?(\\^\\d+)?)"

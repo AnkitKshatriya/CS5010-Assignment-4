@@ -1,0 +1,32 @@
+Since we are required to implement a linked list, there is obviously the list interface that should be here.
+Also, we have some requirements related to the polynomial being created here, so an interface for the polynomial.
+
+The PolynomialImpl implements the interface, so there's that.
+
+The nodes representing a term in the polynomial implement list interface. Also, they support pretty much the same functionality as the
+PolynomialImpl itself, as you could argue that a term in the polynomial is also a fully functional polynomial, with the next node being empty.
+So, it makes sense if the node itself is a PolynomialImpl node.
+
+However, a PolynomialImpl node also has to contain reference to a head node, whereas a PolynomialNode doesn't have that. So, ideally, there would be the following classes & interfaces:
+
+THERE IS NO EXPLICIT REQUIREMENT WHICH STATES THAT THE POLYNOMIAL_IMPL CLASS CANNOT HAVE OTHER PUBLIC METHODS IN IT. THIS HOWEVER IS SUBJECT TO FURTHER DELIBERATION.
+ALSO, LINKED LISTS ARE ORDERED BY DEFINITION, SO LET'S NOT MESS WITH THAT.
+
+Interfaces:
+SinglyLinkedList<T>
+SinglyLinkedListNode<T>
+Polynomial
+
+Classes:
+PolynomialImpl
+PolynomialTermNode
+PolynomialEmptyNode
+Util (for basic utility functionality)
+
+THINK ABOUT WHAT HAPPENS IF THE IMPLEMENTATION HAS TO BE CHANGED TO USE SOME OTHER TYPE OF DATA-STRUCTURE, SUCH AS A SIMPLE LIST. THE CORE FUNCTIONALITY NEEDED BY THE
+POLYNOMIAL INTERFACE SHOULD STILL HOLD, BUT THE ONES INHERITED FROM THE SinglyLinkedListNode<T> SHOULD GO AWAY. HOWEVER, IT SHOULDN'T IMPACT THE FUNCTIONALITY OF THE
+POLYNOMIAL NODE ITSELF. THE ONLY CHANGE WOULD BE WHEN THE INSTEAD OF THE OO (SEPARATE NODE FOR EACH TERM IN THE POLYNOMIAL) MODEL, WE GO FOR SOMETHING THAT IS BASED NOT ON
+NODES, BUT STORES ALL THE INFO WITHIN THE STATE OF A SINGLE CLASS.
+
+Also, since the polynomial should be unsorted. So, the order of nodes should be the same order in which they were parsed.
+The node class need should also have constructor that takes in a single term (shouldn't have + or anything else in there)
