@@ -1,5 +1,5 @@
 # Abstract Data Type for Polynomial representation
-Code for demonstrating how to design a custom ADT (a singly linked list in this case) to implement operations on polynomials with one variable.
+Code for demonstrating how to design a custom ADT (a singly linked list in this case) to implement operations on polynomials with one variable. Implemented as part of CS-5010 coursework.
 
 Supported polynomial operations:
 1. addTerm(coefficient, degree) - Add a term to an existing polynomial. A term is of the form ax^b, where a is the coefficient, and b is the degree of the term.
